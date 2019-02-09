@@ -1,5 +1,5 @@
 const { google } = require('googleapis')
-const keys = require('./config/keys')
+const keys = require('../config/keys')
 
 // function that takes a list of youtube video titles and returns an array of their youtube links
 async function getLinksFromTitles (songs) {

@@ -5,15 +5,20 @@
   "main": "fusionHelper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node fusionHelper.js"
+    "start": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^4.1.0",
     "csvtojson": "^2.0.8",
     "express": "^4.16.4",
     "googleapis": "^37.1.0",
-    "jest": "^24.0.0"
+    "nodemon": "^1.18.10",
+    "react-scripts": "^2.1.3"
   }
 }
