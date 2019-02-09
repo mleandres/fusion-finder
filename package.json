@@ -1,0 +1,19 @@
+{
+  "name": "fusion-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fusionHelper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node fusionHelper.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^2.0.8",
+    "express": "^4.16.4",
+    "googleapis": "^37.1.0",
+    "jest": "^24.0.0"
+  }
+}

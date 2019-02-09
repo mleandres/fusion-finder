@@ -1,0 +1,198 @@
+{
+  "pop rock": [
+    {
+      "artist": "Chapel",
+      "song": "Caught Up",
+      "youtubeId": "W8jUoX49YnY"
+    }
+  ],
+  "metal pop": [
+    {
+      "artist": "Ratt",
+      "song": "Round and Round",
+      "youtubeId": "0u8teXR8VE4"
+    }
+  ],
+  "hip-hop pop": [
+    {
+      "artist": "Vanilla Ice",
+      "song": "Ice Ice Baby",
+      "youtubeId": "rog8ou-ZepE"
+    }
+  ],
+  "funk pop": [
+    {
+      "artist": "Dirty Loops",
+      "song": "Hit Me",
+      "youtubeId": "utn6TnORINM"
+    }
+  ],
+  "jazz pop": [
+    {
+      "artist": "Theme Song",
+      "song": "Hey Arnold",
+      "youtubeId": "vUsnJ9jlwns"
+    }
+  ],
+  "electronic pop": [
+    {
+      "artist": "Vitas",
+      "song": "The 7th Element",
+      "youtubeId": "IwzUs1IMdyQ"
+    }
+  ],
+  "indie pop": [
+    {
+      "artist": "Arcade Fire",
+      "song": "Everything Now",
+      "youtubeId": "zC30BYR3CUk"
+    }
+  ],
+  "metal rock": [
+    {
+      "artist": "Foo Fighters",
+      "song": "Everlong",
+      "youtubeId": "eBG7P-K-r1Y"
+    }
+  ],
+  "hip-hop rock": [
+    {
+      "artist": "K-os",
+      "song": "Equalizer",
+      "youtubeId": "16iNtol-X6s"
+    }
+  ],
+  "funk rock": [
+    {
+      "artist": "Stevie Wonder",
+      "song": "Superstition",
+      "youtubeId": "0CFuCYNx-1g"
+    }
+  ],
+  "jazz rock": [
+    {
+      "artist": "Kiev",
+      "song": "Ariah Being",
+      "youtubeId": "u0l4L1KnUlY"
+    }
+  ],
+  "electronic rock": [
+    {
+      "artist": "Daft Punk",
+      "song": "Robot Rock",
+      "youtubeId": "sFZjqVnWBhc"
+    }
+  ],
+  "indie rock": [
+    {
+      "artist": "City and Colour",
+      "song": "Fragile Bird",
+      "youtubeId": "unXVsWO3bVE"
+    }
+  ],
+  "hip-hop metal": [
+    {
+      "artist": "Death Grips",
+      "song": "Hot Head",
+      "youtubeId": "UQm8qpexnjo"
+    }
+  ],
+  "funk metal": [
+    {
+      "artist": "Dance Gavin Dance",
+      "song": "Blue Dream",
+      "youtubeId": "j1k8QaKQGXE"
+    }
+  ],
+  "jazz metal": [
+    {
+      "artist": "Dixie Dregs",
+      "song": "Odyssey",
+      "youtubeId": "qi5byvRoGe8"
+    }
+  ],
+  "electronic metal": [
+    {
+      "artist": "Polyphia",
+      "song": "LIT",
+      "youtubeId": "per9Wz0N-QA"
+    }
+  ],
+  "indie metal": [
+    {
+      "artist": "Kurt Travis",
+      "song": "Desperate",
+      "youtubeId": "60aCy2jj4sQ"
+    }
+  ],
+  "funk hip-hop": [
+    {
+      "artist": "Kendrick Lamar",
+      "song": "i",
+      "youtubeId": "8aShfolR6w8"
+    }
+  ],
+  "hip-hop jazz": [
+    {
+      "artist": "A Tribe Called Quest",
+      "song": "Check the Rhime",
+      "youtubeId": "1QWEPdgS3As"
+    }
+  ],
+  "electronic hip-hop": [
+    {
+      "artist": "Moow",
+      "song": "Honey",
+      "youtubeId": "QaSX5xBnq-4"
+    }
+  ],
+  "hip-hop indie": [
+    {
+      "artist": "Brent Walsh",
+      "song": "The Way You Seem",
+      "youtubeId": "jeV70d2ixxQ"
+    }
+  ],
+  "funk jazz": [
+    {
+      "artist": "You're the One",
+      "song": "Braxton Cook",
+      "youtubeId": "s5680fx4wJU"
+    }
+  ],
+  "electronic funk": [
+    {
+      "artist": "Just a Touch",
+      "song": "Wolfpack",
+      "youtubeId": "Ky-U9aaLzo0"
+    }
+  ],
+  "funk indie": [
+    {
+      "artist": "Vulfpeck",
+      "song": "Backpocket",
+      "youtubeId": "yG96RttfZtM"
+    }
+  ],
+  "electronic jazz": [
+    {
+      "artist": "Blue Thyme",
+      "song": "Through The Night",
+      "youtubeId": "GxPs30yy7rE"
+    }
+  ],
+  "indie jazz": [
+    {
+      "artist": "Bojan Petkov",
+      "song": "Indie Jazz",
+      "youtubeId": "PZUQbRktCxU"
+    }
+  ],
+  "electronic indie": [
+    {
+      "artist": "Submotion Orchestra",
+      "song": "Kites",
+      "youtubeId": "Oun-tJQbcLo"
+    }
+  ]
+}
