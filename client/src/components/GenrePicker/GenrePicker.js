@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchTracks } from '../../actions';
+import { capitalizeArray } from '../../utils/helpers';
 
 import VideoShower from '../VideoShower/VideoShower';
-import styles from './GenrePicker.module.css';
 import SelectableButtonGroup from '../SelectableButtonGroup';
+
+import styles from './GenrePicker.module.css';
 
 
 class GenrePicker extends Component {
@@ -26,20 +28,9 @@ class GenrePicker extends Component {
     this.handleSelected = this.handleSelected.bind(this);
   }
 
-  renderVideoSegment () {
-    if (this.state.showVideo) {
-      return (
-        <div>
-          <VideoShower videoId={this.state.video.id} title={this.state.video.title}>
-            <h1>{this.state.fusionPicked}</h1>
-          </VideoShower>
-          <br />
-        </div>
-      );
-    } else if (this.state.dataError) {
-      return <h2 className={styles.centered}>Something went wrong... :(</h2>
-    } else {
-      return <h2 className={styles.centered}>Select two genres above!</h2>;
+  componentDidUpdate () {
+    if (this.state.showVideo || this.state.dataError) {
+      this.scrollToVideoDiv();
     }
   }
 
@@ -54,17 +45,17 @@ class GenrePicker extends Component {
       const fusionSongs = this.props.fusions[fusionKey];
 
       // no errors (i.e. at least one track exists for the fusion)
-      if (fusionSongs.length > 0) {
+      if (fusionSongs) {
         // pick a random song to show
         const index = Math.floor(Math.random() * fusionSongs.length);
         const fusion = fusionSongs[index];
 
         // set state of component to show a song
         this.setState({
-          fusionPicked: fusionArray.join(' '),
+          fusionPicked: capitalizeArray(fusionArray).join(' '),
           showVideo: true,
           video: {
-            id: fusion.videoId,
+            id: fusion.youtubeId,
             title: fusion.artist + ' - ' + fusion.song
           }
         });
@@ -76,8 +67,30 @@ class GenrePicker extends Component {
       }
     } else {
       this.setState({
-        showVideo: false
+        showVideo: false,
+        dataError: false
       })
+    }
+  }
+
+  scrollToVideoDiv = () => {
+    this.videoDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }
+
+  renderVideoSegment () {
+    if (this.state.showVideo) {
+      return (
+        <div>
+          <VideoShower videoId={this.state.video.id} title={this.state.video.title}>
+            <h1>{this.state.fusionPicked}</h1>
+          </VideoShower>
+          <br />
+        </div>
+      );
+    } else if (this.state.dataError) {
+      return <h2 className={styles.centered}>I got nothing... Try another pair!</h2>
+    } else {
+      return <h2 className={styles.centered}>Select two genres above!</h2>;
     }
   }
 
@@ -93,12 +106,12 @@ class GenrePicker extends Component {
 
   render () {
     return (
-      <div>
+      <div className="ui container">
         <div className="ui four column doubling grid">
           {this.renderGenreButtons()}
         </div>
         <br />
-        <div className="ui placeholder segment">
+        <div className="ui placeholder segment" ref={(el) => { this.videoDiv = el; }}>
           {this.renderVideoSegment()}
         </div>
       </div>
@@ -106,4 +119,8 @@ class GenrePicker extends Component {
   }
 }
 
-export default connect(null, { fetchTracks })(GenrePicker);
+const mapStateToProps = ({ token }) => {
+  return { token };
+}
+
+export default connect(mapStateToProps, { fetchTracks })(GenrePicker);

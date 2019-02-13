@@ -30,13 +30,13 @@ class SelectableButtonGroup extends Component {
     if (selected) {
       newSelected = { ...this.state.selected, [value]: text };
       newNum += 1;
-      console.log(newSelected);
+      // console.log(newSelected);
       this.setState({ selected: newSelected, numSelected: newNum });
     } else {
       newSelected = Object.assign({}, this.state.selected);
       newNum -= 1;
       delete newSelected[value];
-      console.log(newSelected);
+      // console.log(newSelected);
       this.setState({ selected: newSelected, numSelected: newNum });
     }
     if (this.props.handleSelected) {
@@ -51,7 +51,7 @@ class SelectableButtonGroup extends Component {
       const value = item.value ? item.value : item;
 
       return (
-        <div className={this.props.buttonClassName} key={item}>
+        <div className={this.props.buttonClassName} key={item.value + '-' +item.name}>
           <SelectableButton
             handleSelection={this.handleSelection}
             text={text}

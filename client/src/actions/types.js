@@ -1,1 +1,2 @@
 export const FETCH_TRACKS = 'FETCH_TRACKS';
+export const FETCH_SPOTIFY_TOKEN = 'FETCH_SPOTIFY_TOKEN';

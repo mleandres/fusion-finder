@@ -1,23 +1,61 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import GenrePicker from './GenrePicker/GenrePicker';
 import NoticeBanner from './NoticeBanner';
+import Header from './Header';
+import GenrePicker from './GenrePicker/GenrePicker';
+import Footer from './Footer';
+import { fetchSpotifyToken } from '../actions/';
 
 import fusions from '../common/songs.json';
 import genres from '../common/genres.json';
+import Loading from './Loading';
 
-const App = () => {
-  return (
-    <div>
-      <NoticeBanner text="Work in Progress"/>
-      <div className="ui container column">
-        <div style={{ margin: '1em' }}>
-          <h1>Fusion Finder</h1>
-        </div>
+const renderApp = loaded => {
+  if (loaded) {
+    return (
+      <div className="ui">
+        <Header />
         <GenrePicker genres={genres} fusions={fusions}/>
+        <Footer />
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <Loading />
+  }
+}
+
+class App extends Component {
+  componentDidMount () {
+    this.props.fetchSpotifyToken();
+  }
+  
+  renderApp () {
+    if (this.state.token) {
+      return (
+        <div className="ui">
+          <Header />
+          <GenrePicker genres={genres} fusions={fusions}/>
+          <Footer />
+        </div>
+      );
+    } else {
+      return <Loading />
+    }
+  }
+  
+  render () {
+    return (
+      <div>
+        <NoticeBanner text="Work in Progress"/>
+        {renderApp(this.props.token)}
+      </div>
+    );
+  }
 };
 
-export default App;
+const mapStateToProps = ({ token }) => {
+  return { token };
+}
+
+export default connect(mapStateToProps, { fetchSpotifyToken })(App);

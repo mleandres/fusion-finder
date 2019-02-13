@@ -3,9 +3,10 @@ const app = express();
 
 const spotify = require('./services/spotify');
 
+// spotify.getSpotifyToken();
+
+require('./routes/authRoutes')(app);
 require('./routes/songRoutes')(app);
-
-
 
 if (process.env.NODE_ENV === 'production') {
   // need express to serve static client 
