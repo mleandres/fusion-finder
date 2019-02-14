@@ -1,5 +1,5 @@
 # dev api keys
-config/dev.js
+dev.js
 
 # dependencies
 node_modules

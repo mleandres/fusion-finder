@@ -14,7 +14,7 @@ export const fetchTracks = (genres) => async (dispatch, getState) => {
 
 export const fetchAllTracks = () => async dispatch => {
   const res = await axios.get('/api/allTracks');
-
+  
   dispatch({ type: FETCH_ALL_TRACKS, payload: res.data });
 }
 

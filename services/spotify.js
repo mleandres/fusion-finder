@@ -50,7 +50,7 @@ async function getTrackId (token, query) {
   return res.data.tracks.items[0] !== undefined ? res.data.tracks.items[0].id : null;
 }
 
-async function getTracksFromTrackSeed (token, trackId) {
+async function getTracksFromTrackSeed (token, trackId, limit) {
   const url = 'https://api.spotify.com/v1/recommendations';
   const headers = { 'Authorization': 'Bearer ' + token };
   const params = {
@@ -58,7 +58,7 @@ async function getTracksFromTrackSeed (token, trackId) {
     max_popularity: 70,
     min_popularity: 20,
     target_popularity: 50,
-    limit: 5
+    limit
   };
 
   const res = await axios({
@@ -67,7 +67,7 @@ async function getTracksFromTrackSeed (token, trackId) {
     params
   });
 
-  const tracks = res.data.tracks.map(track => {
+  let tracks = res.data.tracks.map(track => {
     return {
       artist: track.artists[0].name,
       song: track.name,

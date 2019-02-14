@@ -50,10 +50,16 @@ module.exports = app => {
           }
         */
 
-        const tracksInfo = await spotify.getTracksFromTrackSeed(token, fusions[fusion][0].spotifyId);
-        // const tracks = await youtube.getYoutubeLinksFromTracks(trackInfo);
+        const seedTrack = fusions[fusion][0];
+        const trackNums = 9;
 
-        result[fusion] = tracksInfo;
+        let tracksInfo = await spotify.getTracksFromTrackSeed(token, seedTrack.spotifyId, trackNums);
+        
+        // also add seed track
+        tracksInfo.push(seedTrack);
+
+        // add array to results
+        result[fusion] = tracksInfo
       }
     }
 
