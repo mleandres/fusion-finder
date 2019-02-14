@@ -1,0 +1,226 @@
+{
+  "pop rock": [
+    {
+      "fusion": "pop rock",
+      "artist": "Eagles",
+      "song": "Hotel California",
+      "spotifyId": "40riOy7x9W7GXjyGp4pjAv"
+    }
+  ],
+  "metal pop": [
+    {
+      "fusion": "metal pop",
+      "artist": "Ratt",
+      "song": "Round and Round",
+      "spotifyId": "5B6Z7NwVqA7W3UFiqBdEJC"
+    }
+  ],
+  "hip-hop pop": [
+    {
+      "fusion": "hip-hop pop",
+      "artist": "Vanilla Ice",
+      "song": "Ice Ice Baby",
+      "spotifyId": "3XVozq1aeqsJwpXrEZrDJ9"
+    }
+  ],
+  "funk pop": [
+    {
+      "fusion": "funk pop",
+      "artist": "Dirty Loops",
+      "song": "Hit Me",
+      "spotifyId": "21bBoYnoM4z8gMFiijlvaT"
+    }
+  ],
+  "jazz pop": [
+    {
+      "fusion": "jazz pop",
+      "artist": "Just the Two of Us",
+      "song": "Grover Washington Jr.",
+      "spotifyId": "1ko2lVN0vKGUl9zrU0qSlT"
+    }
+  ],
+  "electronic pop": [
+    {
+      "fusion": "electronic pop",
+      "artist": "Lights",
+      "song": "Ellie Goulding",
+      "spotifyId": "7gUpO6td4OOnu0Lf9vhcIV"
+    }
+  ],
+  "indie pop": [
+    {
+      "fusion": "indie pop",
+      "artist": "Arcade Fire",
+      "song": "Everything Now",
+      "spotifyId": "7KsZHCfOitA5V9oQYVdltG"
+    }
+  ],
+  "metal rock": [
+    {
+      "fusion": "metal rock",
+      "artist": "Foo Fighters",
+      "song": "Everlong",
+      "spotifyId": "5UWwZ5lm5PKu6eKsHAGxOk"
+    }
+  ],
+  "hip-hop rock": [
+    {
+      "fusion": "hip-hop rock",
+      "artist": "K-os",
+      "song": "Equalizer",
+      "spotifyId": "05ZdOPniBjJxBrOoJEquPL"
+    }
+  ],
+  "funk rock": [
+    {
+      "fusion": "funk rock",
+      "artist": "Stevie Wonder",
+      "song": "Superstition",
+      "spotifyId": "4dwrL3Z5U2RZ6MZiKE2PgL"
+    }
+  ],
+  "jazz rock": [
+    {
+      "fusion": "jazz rock",
+      "artist": "Kiev",
+      "song": "Ariah Being",
+      "spotifyId": "2jywPd8LPFCsr5VW6NxH4Z"
+    }
+  ],
+  "electronic rock": [
+    {
+      "fusion": "electronic rock",
+      "artist": "Daft Punk",
+      "song": "Robot Rock",
+      "spotifyId": "4zu9wo2FXoBSsKjO6tRB3R"
+    }
+  ],
+  "indie rock": [
+    {
+      "fusion": "indie rock",
+      "artist": "City and Colour",
+      "song": "Fragile Bird",
+      "spotifyId": "7hlbbqRXaxVIjc7DYAv1o3"
+    }
+  ],
+  "hip-hop metal": [
+    {
+      "fusion": "hip-hop metal",
+      "artist": "Death Grips",
+      "song": "Hot Head",
+      "spotifyId": "4Z79ArOZZjYYaq4CGbBxa1"
+    }
+  ],
+  "funk metal": [
+    {
+      "fusion": "funk metal",
+      "artist": "Dance Gavin Dance",
+      "song": "Blue Dream",
+      "spotifyId": "1hImJ5o3WFH6Nb73oQ8bfY"
+    }
+  ],
+  "jazz metal": [
+    {
+      "fusion": "jazz metal",
+      "artist": "Dream Theater",
+      "song": "Another Day",
+      "spotifyId": "69kZsoRrSf7GBTSdJ4BjqA"
+    }
+  ],
+  "electronic metal": [
+    {
+      "fusion": "electronic metal",
+      "artist": "Polyphia",
+      "song": "LIT",
+      "spotifyId": "3RoycW4yhd2HCsWmLR7xIi"
+    }
+  ],
+  "indie metal": [
+    {
+      "fusion": "indie metal",
+      "artist": "Kurt Travis",
+      "song": "Desperate",
+      "spotifyId": "6wcxacFVzzNjM4ZzQG3Oww"
+    }
+  ],
+  "funk hip-hop": [
+    {
+      "fusion": "funk hip-hop",
+      "artist": "Kendrick Lamar",
+      "song": "i",
+      "spotifyId": "7wdzLe2Gsx1RGqbvYZHASz"
+    }
+  ],
+  "hip-hop jazz": [
+    {
+      "fusion": "hip-hop jazz",
+      "artist": "A Tribe Called Quest",
+      "song": "Check the Rhime",
+      "spotifyId": "4HfxDJ0uLHTLe0fZrx0MbQ"
+    }
+  ],
+  "electronic hip-hop": [
+    {
+      "fusion": "electronic hip-hop",
+      "artist": "Moow",
+      "song": "Honey",
+      "spotifyId": "1GWIyLJLyza41v0TEdvUOG"
+    }
+  ],
+  "hip-hop indie": [
+    {
+      "fusion": "hip-hop indie",
+      "artist": "Brent Walsh",
+      "song": "The Way You Seem",
+      "spotifyId": "4uoPUH5GDt8GqgOglKV6u2"
+    }
+  ],
+  "funk jazz": [
+    {
+      "fusion": "funk jazz",
+      "artist": "You're the One",
+      "song": "Braxton Cook",
+      "spotifyId": "2uMaucw4d5WsA0HguYCZFK"
+    }
+  ],
+  "electronic funk": [
+    {
+      "fusion": "electronic funk",
+      "artist": "Starlight",
+      "song": "Jupiter",
+      "spotifyId": "6gm7vAu3OUffBOVEH98m3X"
+    }
+  ],
+  "funk indie": [
+    {
+      "fusion": "funk indie",
+      "artist": "Vulfpeck",
+      "song": "Back pocket",
+      "spotifyId": "1DrlLvlYd1FIjNavRm6NdX"
+    }
+  ],
+  "electronic jazz": [
+    {
+      "fusion": "electronic jazz",
+      "artist": "Blue Thyme",
+      "song": "Through The Night",
+      "spotifyId": "6i7IGCMhv7YdXjLgz1WFkL"
+    }
+  ],
+  "indie jazz": [
+    {
+      "fusion": "indie jazz",
+      "artist": "Nightingale",
+      "song": "The Reign of Kindo",
+      "spotifyId": "38sEdGYtu0c8bNuIzsftvm"
+    }
+  ],
+  "electronic indie": [
+    {
+      "fusion": "electronic indie",
+      "artist": "Submotion Orchestra",
+      "song": "Kites",
+      "spotifyId": "3qzxORCDY3UpbvT7p7WYIE"
+    }
+  ]
+}

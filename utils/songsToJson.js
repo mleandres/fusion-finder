@@ -1,19 +1,20 @@
 const fs = require('fs');
 const csv = require('csvtojson');
-const { getYoutubeLink } = require('./fusionHelper');
+const { getSpotifyToken, getTrackId } = require('../services/spotify');
 
-const songsDataPath = './common/data/fusion_songs.csv';
+const songsDataPath = '../common/data/fusion_songs.csv';
 
 async function csvToArray (path) {
+  const spotifyToken = await getSpotifyToken();
   const jsonArray = await csv().fromFile(path);
   const songsArray = await Promise.all(
     jsonArray.map(async row => {
-      const youtubeId = await getYoutubeLink(row.artist, row.song);
+      const spotifyId = await getTrackId(spotifyToken, row.song + ' ' + row.artist);
       const newEntry = {
         fusion: row.fusion.split(' ').sort().join(' ').toLowerCase(),
         artist: row.artist,
         song: row.song,
-        youtubeId
+        spotifyId
       };
       return newEntry;
     })
@@ -21,12 +22,10 @@ async function csvToArray (path) {
   return songsArray;
 }
 
+// adds the details of item to the object
 function createSongsObject (obj, item) {
-  const newEntry = {
-    artist: item.artist,
-    song: item.song,
-    youtubeId: item.youtubeId
-  };
+  const newEntry = Object.assign({}, item);
+
   if (obj[item.fusion]) {
     obj[item.fusion].append(newEntry);
   } else {
@@ -52,4 +51,4 @@ function csvToJson (csvPath, jsonPath) {
   });
 }
 
-csvToJson(songsDataPath, 'songs.json');
+csvToJson(songsDataPath, '../common/data/songs.json')

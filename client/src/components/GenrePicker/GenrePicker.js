@@ -1,90 +1,100 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-import { fetchTracks } from '../../actions';
-import { capitalizeArray } from '../../utils/helpers';
+import { capitalizeArray, shuffle } from '../../utils/helpers';
 
-import VideoShower from '../VideoShower/VideoShower';
+import SpotifyShower from '../SpotifyShower';
 import SelectableButtonGroup from '../SelectableButtonGroup';
+import Another from './Another';
 
 import styles from './GenrePicker.module.css';
-
 
 class GenrePicker extends Component {
   constructor (props) {
     super(props);
     this.state = {
       fusionPicked: '',
-      showVideo: false,
-      video: {
-        id: '',
-        title: ''
-      },
+      showMedia: false,
+      mediaQueue: [],
+      queueIndex: 0,
       dataError: false
     };
 
     this.maxGenres = 2;
 
     this.handleSelected = this.handleSelected.bind(this);
+    this.showAnother = this.showAnother.bind(this);
   }
 
   componentDidUpdate () {
-    if (this.state.showVideo || this.state.dataError) {
-      this.scrollToVideoDiv();
+    if (this.state.showMedia || this.state.dataError) {
+      this.scrollToMediaDiv();
     }
   }
 
   // function to pass into SelectableButtonGroup component
-  // get info to display for videoShower when 2 genres are selected
+  // get info to display for SpotifyShower when 2 genres are selected
   handleSelected (genresSelected, numSelected) {
-
-    // check if desired number of genres is selected
+    // if correct number of genres is selected
     if (numSelected === this.maxGenres) {
+      // find out what fusion was selected
       const fusionArray = Object.keys(genresSelected).sort();
-      const fusionKey = fusionArray.join(' ').toLowerCase();
-      const fusionSongs = this.props.fusions[fusionKey];
+      const fusion = fusionArray.join(' ').toLowerCase();
+      
+      // get list of tracks from props:
+      const tracksList = this.props.fusions[fusion];
+      
+      if (tracksList) {
+        // shuffle tracklist
+        shuffle(tracksList);
 
-      // no errors (i.e. at least one track exists for the fusion)
-      if (fusionSongs) {
-        // pick a random song to show
-        const index = Math.floor(Math.random() * fusionSongs.length);
-        const fusion = fusionSongs[index];
-
-        // set state of component to show a song
+        // update state
         this.setState({
           fusionPicked: capitalizeArray(fusionArray).join(' '),
-          showVideo: true,
-          video: {
-            id: fusion.youtubeId,
-            title: fusion.artist + ' - ' + fusion.song
-          }
+          showMedia: true,
+          mediaQueue: tracksList,
+          queueIndex: 0
         });
       } else {
-        // no songs found for the fusion
         this.setState({
           dataError: true
         })
       }
     } else {
       this.setState({
-        showVideo: false,
+        showMedia: false,
         dataError: false
-      })
+      });
     }
   }
 
-  scrollToVideoDiv = () => {
-    this.videoDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  showAnother () {
+    let newIndex = this.state.queueIndex;
+    if (newIndex + 1 === this.state.mediaQueue.length) {
+      newIndex = 0;
+    } else {
+      newIndex += 1;
+    }
+    this.setState({
+      queueIndex: newIndex
+    })
+    console.log(newIndex);
   }
 
-  renderVideoSegment () {
-    if (this.state.showVideo) {
+  scrollToMediaDiv = () => {
+    this.mediaDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }
+
+  renderMediaSegment (showMedia, queue, index) {
+    if (showMedia) {
+      const track = queue[index];
+      const title = track.artist + ' - ' + track.song;
+
       return (
         <div>
-          <VideoShower videoId={this.state.video.id} title={this.state.video.title}>
+          <SpotifyShower spotifyId={track.spotifyId} title={title}>
             <h1>{this.state.fusionPicked}</h1>
-          </VideoShower>
-          <br />
+          </SpotifyShower>
+          <Another handleClick={this.showAnother} />
         </div>
       );
     } else if (this.state.dataError) {
@@ -99,7 +109,7 @@ class GenrePicker extends Component {
       <SelectableButtonGroup 
         items={this.props.genres}
         handleSelected={this.handleSelected}
-        buttonClassName="column"
+        buttonClassName="column centered"
       />
     );
   }
@@ -111,16 +121,12 @@ class GenrePicker extends Component {
           {this.renderGenreButtons()}
         </div>
         <br />
-        <div className="ui placeholder segment" ref={(el) => { this.videoDiv = el; }}>
-          {this.renderVideoSegment()}
+        <div className="ui placeholder segment" ref={(el) => { this.mediaDiv = el; }}>
+          {this.renderMediaSegment(this.state.showMedia, this.state.mediaQueue, this.state.queueIndex)}
         </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ token }) => {
-  return { token };
-}
-
-export default connect(mapStateToProps, { fetchTracks })(GenrePicker);
+export default GenrePicker;

@@ -30,6 +30,8 @@ async function getYoutubeLink (artist, song) {
   }
 }
 
+// i want a function that takes in my genre fusion object and poops out an object mapping fusions to spotify ids
+
 module.exports = {
   getYoutubeLink,
   getLinksFromTitles

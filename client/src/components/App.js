@@ -5,37 +5,22 @@ import NoticeBanner from './NoticeBanner';
 import Header from './Header';
 import GenrePicker from './GenrePicker/GenrePicker';
 import Footer from './Footer';
-import { fetchSpotifyToken } from '../actions/';
+import { fetchAllTracks } from '../actions/';
 
-import fusions from '../common/songs.json';
 import genres from '../common/genres.json';
 import Loading from './Loading';
 
-const renderApp = loaded => {
-  if (loaded) {
-    return (
-      <div className="ui">
-        <Header />
-        <GenrePicker genres={genres} fusions={fusions}/>
-        <Footer />
-      </div>
-    );
-  } else {
-    return <Loading />
-  }
-}
-
 class App extends Component {
   componentDidMount () {
-    this.props.fetchSpotifyToken();
+    this.props.fetchAllTracks(); 
   }
   
-  renderApp () {
-    if (this.state.token) {
+  renderApp (loadedCriteria) {
+    if (loadedCriteria) {
       return (
         <div className="ui">
           <Header />
-          <GenrePicker genres={genres} fusions={fusions}/>
+          <GenrePicker genres={genres} fusions={this.props.tracks}/>
           <Footer />
         </div>
       );
@@ -45,17 +30,18 @@ class App extends Component {
   }
   
   render () {
+    console.log(this.props.tracks);
     return (
       <div>
         <NoticeBanner text="Work in Progress"/>
-        {renderApp(this.props.token)}
+        {this.renderApp(this.props.tracks)}
       </div>
     );
   }
 };
 
-const mapStateToProps = ({ token }) => {
-  return { token };
+const mapStateToProps = ({ tracks }) => {
+  return { tracks };
 }
 
-export default connect(mapStateToProps, { fetchSpotifyToken })(App);
+export default connect(mapStateToProps, { fetchAllTracks })(App);

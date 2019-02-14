@@ -8,6 +8,22 @@ const spotify = require('./services/spotify');
 require('./routes/authRoutes')(app);
 require('./routes/songRoutes')(app);
 
+const getTracksTest = async () => {
+  const token = await spotify.getSpotifyToken();
+  const genres = 'electronic,metal';
+  const tracks = await spotify.getTracksFromGenreSeed(token, genres);
+  console.log(tracks);
+}
+
+const getArtistsTest = async () => {
+  const token = await spotify.getSpotifyToken();
+  const track = await spotify.getTrackId(token, 'Eagle vs Crows Dance Gavin Dance');
+  console.log(track);
+};
+
+// getArtistsTest();
+// getTracksTest();
+
 if (process.env.NODE_ENV === 'production') {
   // need express to serve static client 
   app.use(express.static('client/build'));
