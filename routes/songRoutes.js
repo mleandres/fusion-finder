@@ -59,7 +59,7 @@ module.exports = app => {
         tracksInfo.push(seedTrack);
 
         // add array to results
-        result[fusion] = tracksInfo
+        result[fusion] = tracksInfo;
       }
     }
 

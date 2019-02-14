@@ -53,11 +53,13 @@ async function getTrackId (token, query) {
 async function getTracksFromTrackSeed (token, trackId, limit) {
   const url = 'https://api.spotify.com/v1/recommendations';
   const headers = { 'Authorization': 'Bearer ' + token };
+  const max_popularity = 70;
+  const min_popularity = 20;
+  const target_popularity = Math.floor(Math.random()* (max_popularity - min_popularity + 1)) + min_popularity;
   const params = {
     seed_tracks: trackId,
-    max_popularity: 70,
-    min_popularity: 20,
-    target_popularity: 50,
+    max_popularity,
+    min_popularity,
     limit
   };
 
