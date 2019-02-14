@@ -81,7 +81,7 @@ class GenrePicker extends Component {
   }
 
   scrollToMediaDiv = () => {
-    this.mediaDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    this.mediaDiv.scrollIntoView({ behavior: 'smooth' });
   }
 
   renderMediaSegment (showMedia, queue, index) {

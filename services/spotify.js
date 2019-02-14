@@ -55,7 +55,7 @@ async function getTracksFromTrackSeed (token, trackId, limit) {
   const headers = { 'Authorization': 'Bearer ' + token };
   const max_popularity = 70;
   const min_popularity = 20;
-  const target_popularity = Math.floor(Math.random()* (max_popularity - min_popularity + 1)) + min_popularity;
+  // const target_popularity = Math.floor(Math.random()* (max_popularity - min_popularity + 1)) + min_popularity;
   const params = {
     seed_tracks: trackId,
     max_popularity,
