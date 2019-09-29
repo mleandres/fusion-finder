@@ -6,7 +6,7 @@ import FavouriteRow from './FavouriteRow';
 const FavouritesTab = props => {
   const renderRows = data => {
     return data.map(({ song, artist, fusion }, i) => {
-      return <FavouriteRow song={song} artist={artist} fusion={fusion} key={i} />;
+      return <FavouriteRow song={song} artist={artist} fusion={fusion} index={i} key={i} />;
     });
   };
 

@@ -19,13 +19,17 @@ const mockData = [
 ]
 
 export default(state = mockData, action) => {
+  let newState = [...state]
+
   switch(action.type) {
     case ADD_FAVOURITE_TRACK:
       // payload track to be added
-      return state.push(action.payload);
+      newState.push(action.payload);
+      return newState;
     case DELETE_FAVOURITE_TRACK:
-      // payload is index of track to remove
-      return state.splice(action.payload, 1);
+      // payload is index to remove
+      newState.splice(action.payload, 1);
+      return newState;
     default:
       return state;
   }
