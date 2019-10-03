@@ -4,9 +4,10 @@ import { capitalizeArray, shuffle } from '../../utils/helpers';
 
 import SpotifyShower from '../SpotifyShower';
 import SelectableButtonGroup from '../SelectableButtonGroup';
-import Another from './Another';
 
 import styles from './GenrePicker.module.css';
+import AnotherButton from './AnotherButton';
+import AddToFavouritesButton from '../Favourites/AddToFavouritesButton';
 
 class GenrePicker extends Component {
   constructor (props) {
@@ -90,11 +91,13 @@ class GenrePicker extends Component {
       const title = track.artist + ' - ' + track.song;
 
       return (
-        <div>
+        <div className="center aligned">
           <SpotifyShower spotifyId={track.spotifyId} title={title}>
             <h1>{this.state.fusionPicked}</h1>
           </SpotifyShower>
-          <Another handleClick={this.showAnother} />
+          <AnotherButton handleClick={this.showAnother} />
+          <br />
+          <AddToFavouritesButton handleClick={() => {console.log("ADDED TO FAVOURITES")}} />
         </div>
       );
     } else if (this.state.dataError) {

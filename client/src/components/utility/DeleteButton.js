@@ -1,10 +1,10 @@
 import React from 'react';
 
-const DeleteButton = props => {
+const DeleteButton = ({ handleClick }) => {
   return (
     <button 
       className="ui compact icon basic button"
-      onClick={props.onClick}
+      onClick={handleClick}
     >
       <i className="red trash alternate icon"></i>
     </button> 

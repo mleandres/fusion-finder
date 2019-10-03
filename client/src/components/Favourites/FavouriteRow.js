@@ -15,7 +15,7 @@ const FavouriteRow = ({ artist, song, fusion, index, deleteTrackFromFavourites }
       <td>{song}</td>
       <td>{fusion}</td>
       <td>
-        <DeleteButton onClick={deleteFavourite.bind(this)} />
+        <DeleteButton handleClick={deleteFavourite.bind(this)} />
       </td>
     </tr>
   );
