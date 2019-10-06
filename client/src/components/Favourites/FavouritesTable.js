@@ -11,9 +11,9 @@ const FavouritesTable = ({ favourites }) => {
   };
 
   const renderTable = () => {
-    if (favourites.length === 0) {
+    if (favourites.length > 0) {
       return (
-        <table className="ui very basic fixed unstackable table">
+        <table className="ui very basic unstackable fixed table">
           <thead>
             <tr>
               <th>Name</th>
