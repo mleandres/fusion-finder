@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="ui footer segment">
       <div>
-        Made by <a href="https://www.youtube.com/watch?v=PEG3Wd1f_EI&list=PL77KcIgtaqxwVoy_MJfT7P7GH7zvdYltN" target="_blank" rel="noopener noreferrer">
+        Made by <a href="https://github.com/mleandres" target="_blank" rel="noopener noreferrer">
         Matthew Leandres</a> using React
       </div>
       <div>

@@ -9,6 +9,7 @@ import { fetchAllTracks } from '../actions/';
 
 import genres from '../common/genres.json';
 import Loading from './Loading';
+import FavouritesTable from './Favourites/FavouritesTable';
 
 class App extends Component {
   componentDidMount () {
@@ -21,6 +22,7 @@ class App extends Component {
         <div className="ui">
           <Header />
           <GenrePicker genres={genres} fusions={this.props.tracks}/>
+          <FavouritesTable />
           <Footer />
         </div>
       );

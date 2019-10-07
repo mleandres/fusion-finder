@@ -1,6 +1,6 @@
 import React from 'react';
 import Youtube from 'react-youtube';
-import styles from './VideoShower.module.css'
+import styles from './VideoShower.module.css';
 
 const VideoShower = ({ children, videoId, title }) => {
   const options = {

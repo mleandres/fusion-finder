@@ -13,12 +13,6 @@ class SelectableButtonGroup extends Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
 
-  componentDidUpdate () {
-    // if (this.props.handleSelected) {
-    //   this.props.handleSelected(this.state.selected, this.state.numSelected);
-    // }
-  }
-
   static defaultProps = {
     maxSelected: 2
   }

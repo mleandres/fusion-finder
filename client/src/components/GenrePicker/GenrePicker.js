@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { capitalizeArray, shuffle } from '../../utils/helpers';
+import { addTrackToFavourites } from '../../actions';
 
 import SpotifyShower from '../SpotifyShower';
 import SelectableButtonGroup from '../SelectableButtonGroup';
-import Another from './Another';
 
 import styles from './GenrePicker.module.css';
+import AnotherButton from './AnotherButton';
+import AddToFavouritesButton from '../Favourites/AddToFavouritesButton';
 
 class GenrePicker extends Component {
   constructor (props) {
@@ -23,6 +26,7 @@ class GenrePicker extends Component {
 
     this.handleSelected = this.handleSelected.bind(this);
     this.showAnother = this.showAnother.bind(this);
+    this.addFavourite = this.addFavourite.bind(this);
   }
 
   componentDidUpdate () {
@@ -80,6 +84,10 @@ class GenrePicker extends Component {
     console.log(newIndex);
   }
 
+  addFavourite (track, fusion) {
+    this.props.addTrackToFavourites({ ...track, fusion });
+  }
+
   scrollToMediaDiv = () => {
     this.mediaDiv.scrollIntoView({ behavior: 'smooth' });
   }
@@ -90,11 +98,13 @@ class GenrePicker extends Component {
       const title = track.artist + ' - ' + track.song;
 
       return (
-        <div>
+        <div className="center aligned">
           <SpotifyShower spotifyId={track.spotifyId} title={title}>
             <h1>{this.state.fusionPicked}</h1>
           </SpotifyShower>
-          <Another handleClick={this.showAnother} />
+          <AnotherButton handleClick={this.showAnother} />
+          <br />
+          <AddToFavouritesButton handleClick={() => {this.addFavourite(track, this.state.fusionPicked)}} />
         </div>
       );
     } else if (this.state.dataError) {
@@ -129,4 +139,4 @@ class GenrePicker extends Component {
   }
 }
 
-export default GenrePicker;
+export default connect(null, { addTrackToFavourites })(GenrePicker);
