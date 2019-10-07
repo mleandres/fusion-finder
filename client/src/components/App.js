@@ -32,7 +32,7 @@ class App extends Component {
   }
   
   render () {
-    console.log(this.props.tracks);
+    // console.log(this.props.tracks);
     return (
       <div>
         <NoticeBanner text="Work in Progress"/>

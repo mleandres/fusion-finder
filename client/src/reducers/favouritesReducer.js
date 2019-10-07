@@ -6,7 +6,12 @@ export default(state = [], action) => {
   switch(action.type) {
     case ADD_FAVOURITE_TRACK:
       // payload track to be added
-      newState.push(action.payload);
+      if (!newState.some((t) => {
+        return t.song === action.payload.song &&
+               t.artist === action.payload.artist
+      })) {
+        newState.push(action.payload);
+      }
       return newState;
     case DELETE_FAVOURITE_TRACK:
       // payload is index to remove

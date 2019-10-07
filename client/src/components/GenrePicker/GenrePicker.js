@@ -81,7 +81,6 @@ class GenrePicker extends Component {
     this.setState({
       queueIndex: newIndex
     })
-    console.log(newIndex);
   }
 
   addFavourite (track, fusion) {
