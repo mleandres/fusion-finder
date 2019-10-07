@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteTrackFromFavourites } from '../../actions'
+import { deleteTrackFromFavourites } from '../../actions';
 
 import DeleteButton from '../utility/DeleteButton';
 

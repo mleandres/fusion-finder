@@ -25,6 +25,7 @@ export const fetchSpotifyToken = () => async dispatch => {
 };
 
 export const addTrackToFavourites = track => dispatch => {
+  console.log(track)
   dispatch({ type: ADD_FAVOURITE_TRACK, payload: track });
 };
 

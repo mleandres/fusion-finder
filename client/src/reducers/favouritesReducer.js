@@ -1,24 +1,6 @@
 import { ADD_FAVOURITE_TRACK, DELETE_FAVOURITE_TRACK } from '../actions/types';
 
-const mockData = [
-  { 
-    song: 'Mistakes',
-    artist: 'Wayshrine',
-    fusion: 'Indie Bad'
-  },
-  { 
-    song: 'Before',
-    artist: 'Wayshrine',
-    fusion: 'Prog Bad'
-  },
-  { 
-    song: 'Wanted',
-    artist: 'Wayshrine',
-    fusion: 'Metal GREAT'
-  },
-]
-
-export default(state = mockData, action) => {
+export default(state = [], action) => {
   let newState = [...state]
 
   switch(action.type) {

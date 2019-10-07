@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { capitalizeArray, shuffle } from '../../utils/helpers';
+import { addTrackToFavourites } from '../../actions';
 
 import SpotifyShower from '../SpotifyShower';
 import SelectableButtonGroup from '../SelectableButtonGroup';
@@ -24,6 +26,7 @@ class GenrePicker extends Component {
 
     this.handleSelected = this.handleSelected.bind(this);
     this.showAnother = this.showAnother.bind(this);
+    this.addFavourite = this.addFavourite.bind(this);
   }
 
   componentDidUpdate () {
@@ -81,6 +84,10 @@ class GenrePicker extends Component {
     console.log(newIndex);
   }
 
+  addFavourite (track, fusion) {
+    this.props.addTrackToFavourites({ ...track, fusion });
+  }
+
   scrollToMediaDiv = () => {
     this.mediaDiv.scrollIntoView({ behavior: 'smooth' });
   }
@@ -97,7 +104,7 @@ class GenrePicker extends Component {
           </SpotifyShower>
           <AnotherButton handleClick={this.showAnother} />
           <br />
-          <AddToFavouritesButton handleClick={() => {console.log("ADDED TO FAVOURITES")}} />
+          <AddToFavouritesButton handleClick={() => {this.addFavourite(track, this.state.fusionPicked)}} />
         </div>
       );
     } else if (this.state.dataError) {
@@ -132,4 +139,4 @@ class GenrePicker extends Component {
   }
 }
 
-export default GenrePicker;
+export default connect(null, { addTrackToFavourites })(GenrePicker);
