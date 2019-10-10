@@ -1,5 +1,12 @@
 import axios from 'axios';
-import { FETCH_TRACKS, FETCH_SPOTIFY_TOKEN, FETCH_ALL_TRACKS, ADD_FAVOURITE_TRACK, DELETE_FAVOURITE_TRACK } from './types';
+import { 
+  FETCH_TRACKS,
+  FETCH_SPOTIFY_TOKEN,
+  FETCH_ALL_TRACKS,
+  ADD_FAVOURITE_TRACK,
+  DELETE_FAVOURITE_TRACK,
+  INIT_FAVOURITE_TRACKS
+} from './types';
 
 export const fetchTracks = (genres) => async (dispatch, getState) => {
   const res = await axios.get(`/api/tracks`, {
@@ -22,6 +29,10 @@ export const fetchSpotifyToken = () => async dispatch => {
   const res = await axios.get('/api/auth');
   
   dispatch({ type: FETCH_SPOTIFY_TOKEN, payload: res.data });
+};
+
+export const initializeFavourites = favourites => dispatch => {
+  dispatch({ type: INIT_FAVOURITE_TRACKS, payload: favourites });
 };
 
 export const addTrackToFavourites = track => dispatch => {

@@ -5,7 +5,7 @@ import NoticeBanner from './NoticeBanner';
 import Header from './Header';
 import GenrePicker from './GenrePicker/GenrePicker';
 import Footer from './Footer';
-import { fetchAllTracks } from '../actions/';
+import { fetchAllTracks, initializeFavourites } from '../actions/';
 
 import genres from '../common/genres.json';
 import Loading from './Loading';
@@ -13,7 +13,8 @@ import FavouritesTable from './Favourites/FavouritesTable';
 
 class App extends Component {
   componentDidMount () {
-    this.props.fetchAllTracks(); 
+    this.props.fetchAllTracks();
+    this.props.initializeFavourites();
   }
   
   renderApp (loadedCriteria) {
@@ -46,4 +47,4 @@ const mapStateToProps = ({ tracks }) => {
   return { tracks };
 }
 
-export default connect(mapStateToProps, { fetchAllTracks })(App);
+export default connect(mapStateToProps, { fetchAllTracks, initializeFavourites })(App);
