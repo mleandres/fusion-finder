@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const fs = require('fs');
 const csv = require('csvtojson');
 const { getSpotifyToken, getTrackId } = require('../services/spotify');
