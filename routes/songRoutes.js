@@ -50,16 +50,18 @@ module.exports = app => {
           }
         */
 
+        // only use one seed track for now
         const seedTrack = fusions[fusion][0];
         const trackNums = 9;
 
-        let tracksInfo = await spotify.getTracksFromTrackSeed(token, seedTrack.spotifyId, trackNums);
-        
-        // also add seed track
-        tracksInfo.push(seedTrack);
-
-        // add array to results
-        result[fusion] = tracksInfo;
+        try {
+          let tracksInfo = await spotify.getTracksFromTrackSeed(token, seedTrack.spotifyId, trackNums);
+          
+          tracksInfo.push(seedTrack);
+          result[fusion] = tracksInfo;
+        } catch(err) {
+          console.log(err.code + ': Error getting seed for: ', seedTrack);
+        }
       }
     }
 
