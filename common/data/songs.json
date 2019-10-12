@@ -76,7 +76,7 @@
       "fusion": "funk rock",
       "artist": "Stevie Wonder",
       "song": "Superstition",
-      "spotifyId": "4dwrL3Z5U2RZ6MZiKE2PgL"
+      "spotifyId": "1h2xVEoJORqrg71HocgqXd"
     }
   ],
   "jazz rock": [
@@ -114,9 +114,9 @@
   "funk metal": [
     {
       "fusion": "funk metal",
-      "artist": "Dance Gavin Dance",
-      "song": "Blue Dream",
-      "spotifyId": "1hImJ5o3WFH6Nb73oQ8bfY"
+      "artist": "Eternity Forever",
+      "song": "Movies",
+      "spotifyId": "37vOJ5qa7AhgVy83XF2h2K"
     }
   ],
   "jazz metal": [
@@ -148,7 +148,7 @@
       "fusion": "funk hip-hop",
       "artist": "Kendrick Lamar",
       "song": "i",
-      "spotifyId": "7wdzLe2Gsx1RGqbvYZHASz"
+      "spotifyId": "7jKUnzzOGhAlPjr7LkIUlE"
     }
   ],
   "hip-hop jazz": [
@@ -164,7 +164,7 @@
       "fusion": "electronic hip-hop",
       "artist": "Moow",
       "song": "Honey",
-      "spotifyId": "1GWIyLJLyza41v0TEdvUOG"
+      "spotifyId": null
     }
   ],
   "hip-hop indie": [
